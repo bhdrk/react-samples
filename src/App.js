@@ -1,28 +1,40 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import axios from 'axios'
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+
+    constructor(props) {
+        super(props);
+        this.loadUser = this.loadUser.bind(this);
+    }
+
+    loadUser() {
+        axios.get('/user.json')
+    }
+
+    render() {
+        return (
+            <form>
+                <table>
+                    <tr>
+                        <td>
+                            <input type="text" name="username"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" name="userId"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <button onClick={this.loadUser}>Load User Data</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        );
+    }
 }
 
 export default App;

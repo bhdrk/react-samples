@@ -4,15 +4,22 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "classnames": "^2.2.6",
+    "formik": "^1.3.1",
+    "primeicons": "^1.0.0",
+    "primereact": "^2.0.0-rc.1",
     "react": "^16.6.1",
     "react-dom": "^16.6.1",
+    "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test-api-server": "json-server --port 3001 --watch test/json/index.js --routes test/json/routes.json",
+    "test-server": "json-server --port 3001 --watch test/json/test.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -22,5 +29,9 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "casual": "^1.5.19",
+    "json-server": "^0.14.0"
+  }
 }

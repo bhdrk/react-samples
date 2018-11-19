@@ -25,7 +25,9 @@ class MyTable extends Component {
         const data = this.props.data;
         return (
             <table style={{fontSize: 48}}>
+                <tbody>
                 {data.map((item) => <MyRow value={item}/>)}
+                </tbody>
             </table>
         )
     }
@@ -34,17 +36,13 @@ class MyTable extends Component {
 class App extends Component {
     render() {
         return (
-            <div className="App">
-                <header className="App-header">
-                    <MyTable data={
-                        [
-                            ["11", "12", "13"],
-                            ["21", "22", "23"],
-                            ["31", "32", "33"]
-                        ]
-                    }/>
-                </header>
-            </div>
+            <MyTable data={
+                [
+                    ["11", "12", "13"],
+                    ["21", "22", "23"],
+                    ["31", "32", "33"]
+                ]
+            }/>
         );
     }
 }

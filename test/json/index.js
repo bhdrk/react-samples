@@ -2,6 +2,7 @@ const casual = require('casual');
 
 casual.define('user', function () {
     return {
+        id: casual.uuid,
         email: casual.email,
         firstname: casual.first_name,
         lastname: casual.last_name,
